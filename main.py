@@ -9,6 +9,8 @@ app.config['SECRET_KEY'] = "random string"
 
 db = SQLAlchemy(app)
 
+## define model ( id, name, fish, amount, contact)
+
 class catches(db.Model):
    id = db.Column('student_id', db.Integer, primary_key = True)
    name = db.Column(db.String(100))
@@ -22,9 +24,13 @@ def __init__(self, name, fish, amount, contact):
    self.amount = amount
    self.contact = contact
 
+## / route
+
 @app.route('/')
 def show_all():
    return render_template('show_all.html', catches = catches.query.all() )
+
+## /new catch route
 
 @app.route('/new', methods = ['GET', 'POST'])
 def new():
