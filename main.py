@@ -45,8 +45,9 @@ def create_note():
 @app.route("/notes", methods=["GET"])
 
 def get_notes():
-    cursor = db.session.query('SELECT column1,column2 FROM note')
-    return render_template('notes.html', items=cursor.fetchall())
+    return 'testing this'
+
+    ## return render_template('notes.html', notes=query.all())
 
 
 if __name__ == "__main__":
