@@ -84,7 +84,7 @@ def index():
 # Create admin
 admin = flask_admin.Admin(
     app,
-    'Example: Auth',
+    'Post Your Catch',
     base_template='my_master.html',
     template_mode='bootstrap3',
 )
