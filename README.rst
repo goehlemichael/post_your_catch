@@ -1,7 +1,9 @@
-This example shows how to integrate Flask-Security (https://pythonhosted.org/Flask-Security/) with Flask-Admin using the SQLAlchemy backend. It only implements
-the 'login' & 'register' views, but you could follow the same approach for using all of Flask-Security's builtin views (e.g. 'forgot password', 'change password', 'reset password', 'send confirmation' and 'send login').
+Uses Flask-Security (https://pythonhosted.org/Flask-Security/) with Flask-Admin using the SQLAlchemy backend. 
 
-To run this example:
+Currently has:
+
+the 'login' & 'register' views
+
 
 1. Clone the repository::
 
