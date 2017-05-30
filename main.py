@@ -45,7 +45,7 @@ def create_note():
 @app.route("/notes", methods=["GET"])
 
 def get_notes():
-    return 'testing this'
+    return render_template("notes.html", notes = Note.query.all() )
 
     ## return render_template('notes.html', notes=query.all())
 

@@ -1,7 +1,22 @@
-<table>
-{% for item in items %}
-    <tr>
-        <td>column1</td>
-        <td>column2</td>
-    </td>
-{% endfor %}
+      <h3>posts</h3>
+      
+      <table>
+         <thead>
+            <tr>
+               <th>Title</th>
+               <th>Body</th>
+            </tr>
+         </thead>
+         
+         <tbody>
+            {% for note in notes %}
+               <tr>
+                  <td>{{ note.title }}</td>
+                  <td>{{ note.body }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+      
+   </body>
+</html>
