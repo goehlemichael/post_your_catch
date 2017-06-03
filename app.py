@@ -46,6 +46,15 @@ class User(db.Model, UserMixin):
     def __str__(self):
         return self.email
 
+class Post(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    fish = db.Column(db.String(80))
+    amount = db.Column(db.String(80))
+
+def __str__(self, fish, amount):
+    self.fish = fish
+    self.amount = amount
+
 
 # Setup Flask-Security
 user_datastore = SQLAlchemyUserDatastore(db, User, Role)
