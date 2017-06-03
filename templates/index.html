@@ -6,6 +6,25 @@
             <a class="btn btn-default" href="{{ url_for('admin.index') }}">Register to post your catches</a>
             <h1>View Todays Listings</h1>
         </div>
+
+ <table>
+         <thead>
+            <tr>
+               <th>Fish Type</th>
+               <th>Amount</th>
+            </tr>
+         </thead>
+         
+         <tbody>
+            {% for post in posts %}
+               <tr>
+                  <td>{{ post.fish }}</td>
+                  <td>{{ post.amount }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+
     </div>
 </div>
     </body>

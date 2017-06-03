@@ -90,6 +90,19 @@ class MyModelView(sqla.ModelView):
 def index():
     return render_template('index.html')
 
+@app.route("/post", methods=["GET", "POST"])
+
+def create_note():
+    if request.method == "GET":
+        return render_template("post.html")
+    else:
+        fish = request.form["fish"]
+        amount = request.form["amount"]
+        post = Post(fish=fish, amount=amount)
+        db.session.add(post)
+        db.session.commit()
+        return redirect("/")
+
 # Create admin
 admin = flask_admin.Admin(
     app,
