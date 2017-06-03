@@ -1,21 +1,30 @@
-catch model crud
+1. catch model
 
-users need to register to post catches
+2. users register to post catches
 
-Need to determine business model:
+3. Need to determine business model:
 
-will buyers need to subscribe/register to view listings.
-Will the site take a cut of every transaction (like ebay)
-Will certain listings be prioritized (like craigslist)
+* Buyers subscribe/register to view listings
+* Take a cut of every transaction (like ebay)
+* Certain listings prioritized (like craigslist)
+* all free run off advertisements
 
-List table of all catches (fish type, when it was posted, amount, contact information, etc.)
+4. List all catches (fish type, when it was posted, amount, contact information, etc.)
 
-automatically remove catches after a day or so (to be determined on actual duration)
+5. automatically remove catches after a day or so (to be determined on actual duration)
 
-add views for:
+6. add views for:
 
-'forgot password', 'change password', 'reset password', 'send confirmation' and 'send login'
+* forgot password
+* change password
+* reset password
+* send confirmation
+* send login
+* post catch
 
+7. Users configure their location after registering. 
+
+8. Buyers select area ( determine area sizes )
 
 
 

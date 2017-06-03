@@ -23,7 +23,7 @@ the 'login' & 'register' views
 
      python app.py
 
-The first time you run this example, a sample sqlite database gets populated automatically. To suppress this behaviour,
+The first time you run this example, a sample sqlite database gets populated automatically. To suppress this behavior,
 comment the following lines in app.py:::
 
      if not os.path.exists(database_path):
