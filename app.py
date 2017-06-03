@@ -88,10 +88,9 @@ class MyModelView(sqla.ModelView):
 # Flask views
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', posts = Post.query.all() )
 
 @app.route("/post", methods=["GET", "POST"])
-
 def create_note():
     if request.method == "GET":
         return render_template("post.html")
