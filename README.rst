@@ -27,4 +27,6 @@ The first time you run this example, a sample sqlite database gets populated aut
 comment the following lines in app.py:::
 
      if not os.path.exists(database_path):
-         build_sample_db()
+         build_pyc_db()
+
+5. Create new branch for changes -> then merged to develop -> after testing merged to master
