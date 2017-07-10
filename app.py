@@ -96,9 +96,9 @@ class MyModelView(sqla.ModelView):
                 return redirect(url_for('security.login', next=request.url))
 
 # Flask views
-@app.route('/')
+@app.route('/listings')
 def index():
-    return render_template('index.html', posts = Post.query.all() )
+    return render_template('listings.html', posts = Post.query.all() )
 
 @app.route("/post", methods=["GET", "POST"])
 def create_note():

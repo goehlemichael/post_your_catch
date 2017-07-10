@@ -8,7 +8,7 @@
             <p class="lead">Connect to buyers in your area</p>
 
             {% if not current_user.is_authenticated %}
-            <p>Login to post your catch</p>
+            <p>Login to post to the listing</p>
             <p><a class="btn btn-primary" href="{{ url_for('security.login') }}">login</a></p>
             {% endif %}
 
@@ -16,7 +16,7 @@
             <a class="btn btn-primary" href="/post">Create a Post</a>
             {% endif %}
 
-            <p><a class="btn btn-primary" href="/">View Listings</a></p>
+            <p><a class="btn btn-primary" href="/listings">View Listings</a></p>
 
         </div>
     </div>
