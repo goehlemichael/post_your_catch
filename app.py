@@ -123,6 +123,7 @@ admin = flask_admin.Admin(
 # Add model views
 admin.add_view(MyModelView(Role, db.session))
 admin.add_view(MyModelView(User, db.session))
+admin.add_view(MyModelView(Post, db.session))
 
 # define a context processor for merging flask-admin's template context into the
 # flask-security views.

@@ -5,21 +5,19 @@
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
             <h1>Post Your Catch</h1>
-            <p class="lead">Post your catch and connect to buyers in your area</p>
-            <a class="btn btn-primary" href="/post">Create a Post</a>
-
+            <p class="lead">Connect to buyers in your area</p>
 
             {% if not current_user.is_authenticated %}
-            <p>Register today or login to post your catch</p>
-            <ul>
-                <li>email: <b>admin</b></li>
-                <li>password: <b>admin</b></li>
-            </ul>
-            <p><a class="btn btn-primary" href="{{ url_for('security.login') }}">login</a> <a class="btn btn-default" href="{{ url_for('security.register') }}">register</a></p>
+            <p>Login to post your catch</p>
+            <p><a class="btn btn-primary" href="{{ url_for('security.login') }}">login</a></p>
             {% endif %}
-            <p>
-                <a class="btn btn-primary" href="/"><i class="glyphicon glyphicon-chevron-left"></i> Back</a>
-            </p>
+
+            {% if current_user.is_authenticated %}
+            <a class="btn btn-primary" href="/post">Create a Post</a>
+            {% endif %}
+
+            <p><a class="btn btn-primary" href="/">View Listings</a></p>
+
         </div>
     </div>
 </div>
