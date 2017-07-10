@@ -1,9 +1,8 @@
 Uses Flask-Security (https://pythonhosted.org/Flask-Security/) with Flask-Admin using the SQLAlchemy backend. 
 
-Currently has:
+I suggest using virtualenv for development
 
-the 'login' & 'register' views
-
+(https://virtualenv.pypa.io/en/stable/installation/)
 
 1. Clone the repository::
 
@@ -13,7 +12,7 @@ the 'login' & 'register' views
 2. Create and activate a virtual environment::
 
      virtualenv venv
-     source env/bin/activate or . venv/bin/activate
+     source venv/bin/activate
 
 3. Install requirements::
 
@@ -29,4 +28,4 @@ comment the following lines in app.py:::
      if not os.path.exists(database_path):
          build_pyc_db()
 
-5. Create new branch for changes -> then merged to develop -> after testing merged to master
+The default admin login/password is admin/admin
