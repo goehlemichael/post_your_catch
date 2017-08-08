@@ -96,6 +96,10 @@ class MyModelView(sqla.ModelView):
                 return redirect(url_for('security.login', next=request.url))
 
 # Flask views
+@app.route ('/')
+def home():
+    return redirect('/listings')
+
 @app.route('/listings')
 def index():
     return render_template('listings.html', posts = Post.query.all() )
