@@ -95,6 +95,16 @@ class MyModelView(sqla.ModelView):
                 # login
                 return redirect(url_for('security.login', next=request.url))
 
+## protect views
+def role_required(role_name):
+    def decorator(func):
+        def authorize(*args, **kwargs):
+            if not current_user.has_role(role_name):
+                abort(401) # not authorized
+            return func(*args, **kwargs)
+        return authorize
+    return decorator
+
 # Flask views
 @app.route ('/')
 def home():
@@ -105,6 +115,7 @@ def index():
     return render_template('listings.html', posts = Post.query.all() )
 
 @app.route("/post", methods=["GET", "POST"])
+@role_required('user')
 def create_note():
     if request.method == "GET":
         return render_template("post.html")

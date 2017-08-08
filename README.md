@@ -14,7 +14,7 @@ Anyone who would like to sell legally caught fish can post their fresh catch. Th
 
 ## When will Post Your Catch be ready for use?
 
-Currently this web application is under development and not ready for production. There will be mobile applications that work with the main web service. these mobile applications will make it easier to post your catch on web service.
+Currently this web application is under development and not ready for production. There will be mobile applications that work with the main web service. these mobile applications will make it easier to post your catch on the web service.
 
 ## Development Setup (for contributing to the source code)
 
