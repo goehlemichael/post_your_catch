@@ -8,29 +8,24 @@ import flask_admin
 from flask_admin.contrib import sqla
 from flask_admin import helpers as admin_helpers
 
-
 # Create Flask application
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
 db = SQLAlchemy(app)
 
-
 # Define models
-
 # roles_users
 roles_users = db.Table(
     'roles_users',
     db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
     db.Column('role_id', db.Integer(), db.ForeignKey('role.id'))
 )
-
 # posts_users
 posts_users = db.Table(
     'posts_users',
     db.Column('user_id', db.Integer(), db.ForeignKey('user.id')),
     db.Column('post_id', db.Integer(), db.ForeignKey('post.id'))
 )
-
 # role
 class Role(db.Model, RoleMixin):
     id = db.Column(db.Integer(), primary_key=True)
@@ -39,7 +34,6 @@ class Role(db.Model, RoleMixin):
 
     def __str__(self):
         return self.name
-
 # user
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -53,7 +47,6 @@ class User(db.Model, UserMixin):
 
     def __str__(self):
         return self.email
-
 # post
 class Post(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -95,7 +88,7 @@ class MyModelView(sqla.ModelView):
                 # login
                 return redirect(url_for('security.login', next=request.url))
 
-## protect views
+# protect post page from non user, Admin must change user role to user to make posts
 def role_required(role_name):
     def decorator(func):
         def authorize(*args, **kwargs):
@@ -116,7 +109,7 @@ def index():
 
 @app.route("/post", methods=["GET", "POST"])
 @role_required('user')
-def create_note():
+def create_post():
     if request.method == "GET":
         return render_template("post.html")
     else:
@@ -151,11 +144,8 @@ def security_context_processor():
         get_url=url_for
     )
 
-
+## Create and seed database
 def build_pyc_db():
-    """
-    Populate a small db with some example entries.
-    """
 
     import string
     import random
